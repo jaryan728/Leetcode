@@ -39,7 +39,7 @@ public:
         p[i].first = k;
         p[i].second = i;
     }
-    sort(p.begin(), p.end(), comp);
+    sort(p.begin(), p.end());
     for (int i = 0; i < p.size(); i++) {
         ans[i] = nums[p[i].second];
     }
