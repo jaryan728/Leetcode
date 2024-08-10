@@ -7,7 +7,7 @@ public:
             return triangle[i][j];
         }
         if(dp[i][j]!=-1)return dp[i][j];
-        if(i>=triangle.size()||j>=triangle[i].size())return 1e9;
+        // if(i>=triangle.size()||j>=triangle[i].size())return 1e9;
         int u,d;
         u=triangle[i][j]+solve(i+1,j,triangle,dp);
         d=triangle[i][j]+solve(i+1,j+1,triangle,dp);
