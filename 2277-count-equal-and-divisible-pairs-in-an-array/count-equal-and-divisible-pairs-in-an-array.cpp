@@ -3,15 +3,16 @@ public:
     int countPairs(vector<int>& nums, int k) {
     map<int,vector<int>>mpp;
     int ans=0;
-    for(int i=0;i<nums.size()-1;i++)
+    for(int i=0;i<nums.size();i++)
     {
-        for(int j=i+1;j<nums.size();j++)
+       if(mpp.find(nums[i])!=mpp.end())
+       {
+        for(int ind:mpp[nums[i]])
         {
-            if(nums[i]==nums[j])
-            {
-                if((i*j)%k==0)ans++;
-            }
+            if((ind*i)%k==0)ans++;
         }
+       }
+       mpp[nums[i]].push_back(i);
     }
     return ans;
     }
